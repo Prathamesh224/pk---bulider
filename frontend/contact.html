@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | P.K.Builders & Developers </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">P.K.Builders & Developers </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- CONTACT HERO -->
+<section class="contact-hero-bg">
+  <div class="contact-hero-content">
+    <h1>Get in Touch</h1>
+    <p>Luxury homes begin with a simple conversation</p>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-section-bg">
+
+  <div class="contact-container">
+
+    <!-- LEFT INFO -->
+    <div class="contact-info-box">
+      <h2>Contact Information</h2>
+      <p>
+        Reach out to us for project details, pricing,
+        site visits, or investment opportunities.
+      </p>
+
+      <ul>
+        <li><strong>📍 Address:</strong> Pandharpur, Maharashtra</li>
+        <li><strong>📞 Phone:</strong> +91 9405332792</li>
+        <li><strong>📧 Email:</strong> info@PKbuilders.com</li>
+      </ul>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form-box">
+      <h2>Enquire Now</h2>
+      <p>Fill in your details and our team will contact you</p>
+
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Full Name" required>
+        <input type="tel" id="phone" placeholder="Phone Number" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="btn">Submit Enquiry</button>
+      </form>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- MAP -->
+<section class="location location-bg">
+  <h2>Visit Our Office</h2>
+  <iframe src="https://www.google.com/maps?q=Pandharpur,Maharashtra&output=embed"></iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 ABC Realty. All Rights Reserved.
+</footer>
+
+<a href="https://wa.me/919999999999" class="whatsapp">💬</a>
+
+<!-- FORM SCRIPT -->
+<script>
+  document.getElementById("contactForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = {
+      name: name.value,
+      phone: phone.value,
+      email: email.value,
+      message: message.value
+    };
+
+    try {
+      const res = await fetch("http://localhost:3000/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      const result = await res.json();
+      alert(result.message || "Enquiry submitted successfully!");
+      this.reset();
+    } catch {
+      alert("Server error. Please try later.");
+    }
+  });
+</script>
+
+</body>
+</html>

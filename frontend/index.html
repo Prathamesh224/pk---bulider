@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>P.K.Builders & Developers | Premium Real Estate</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo-container">
+    <!-- IMPORTANT: Keep logo image in same folder as index.html -->
+    <img src="logo.jpg" class="logo-img" alt="PK Builders Logo">
+    <span class="logo-text">P.K. Builders & Developers</span>
+  </div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#projects">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<!-- HERO SLIDER -->
+<section class="hero-slider">
+  <div class="slides active" style="background-image:url('https://images.unsplash.com/photo-1501183638710-841dd1904471');">
+    <div class="hero-content">
+      <h1>Homes Beyond Expectations</h1>
+      <p>Inspired living spaces</p>
+      <a href="contact.html" class="btn">Enquire Now</a>
+    </div>
+  </div>
+
+  <div class="slides" style="background-image:url('https://images.unsplash.com/photo-1564013799919-ab600027ffc6');">
+    <div class="hero-content">
+      <h1>Luxury That Lasts</h1>
+      <p>Designed for generations</p>
+      <a href="contact.html" class="btn">View Projects</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about section-bg">
+  <h2>About P.K.Builders & Developers</h2>
+  <p>
+    P.K.Builders & Developers is a trusted real estate developer delivering iconic
+    residential and commercial landmarks with uncompromising quality,
+    elegant design, and prime locations.
+  </p>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights highlights-bg">
+  <h2>Why Choose Us</h2>
+  <div class="highlight-grid">
+    <div class="highlight-box"><h3>10+</h3><p>Years Experience</p></div>
+    <div class="highlight-box"><h3>25+</h3><p>Projects</p></div>
+    <div class="highlight-box"><h3>5000+</h3><p>Happy Families</p></div>
+    <div class="highlight-box"><h3>Premium</h3><p>Locations</p></div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects projects-bg" id="projects">
+  <h2>Our Projects</h2>
+
+  <div class="project-grid">
+
+<!-- PROJECT CARD (CLICKABLE) -->
+<a href=project-golden-leaf.html class="project-card-link">
+  <div class="project-card">
+    <img src="C:\Users\91878\Desktop\PK\frontend\golden.jpeg.jpeg" alt="Golden Leaf Project">
+    <div class="project-content">
+      <h3>Golden Leaf</h3>
+      <p>📍 Isbavi, Pandharpur</p>
+      <p>Status: <strong>Ongoing</strong></p>
+    </div>
+  </div>
+</a>
+
+
+    <!-- YOU CAN COPY THIS BLOCK TO ADD MORE PROJECTS -->
+    <!--
+    <div class="project-card">
+      <img src="project2.jpg" alt="Project Name">
+      <div class="project-content">
+        <h3>Project Name</h3>
+        <p>📍 Location</p>
+        <p>Status: Completed</p>
+      </div>
+    </div>
+    -->
+
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="amenities amenities-bg">
+  <h2>World-Class Amenities</h2>
+  <div class="amenity-grid">
+    <div>🛗 Lift Access</div>
+    <div>🔒 24×7 Security</div>
+    <div>🔒 24×7 Water Suppiler</div>
+    <div>CCTV Survillance</div>
+    <div>Proper Drainage & Sewage System</div>
+    <div>Electricity Backup</div>
+    <div>🚗 Parking</div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="location location-bg">
+  <h2>Our Location</h2>
+  <iframe src="https://www.google.com/maps?q=Pandharpur,Maharashtra&output=embed"></iframe>
+</section>
+
+<!-- CTA -->
+<section class="cta cta-bg">
+  <h2>Your Dream Home Awaits</h2>
+  <p>Book a site visit today</p>
+  <a href="contact.html" class="btn">Contact Us</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 P.K.Builders & Developers. All Rights Reserved.
+</footer>
+
+<a href="https://wa.me/918070141111" class="whatsapp">💬</a>
+
+<script>
+  let i = 0;
+  const slides = document.querySelectorAll('.slides');
+  setInterval(() => {
+    slides[i].classList.remove('active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('active');
+  }, 4000);
+</script>
+
+</body>
+</html>

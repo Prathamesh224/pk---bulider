@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Panel | Enquiries</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 30px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #111;
+      color: #fff;
+    }
+
+    tr:hover {
+      background: #f1f1f1;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>Website Enquiries</h1>
+
+<table id="enquiryTable">
+  <tr>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Message</th>
+    <th>Date</th>
+  </tr>
+</table>
+
+<script>
+  fetch("http://localhost:3000/admin/enquiries")
+    .then(res => res.json())
+    .then(data => {
+      const table = document.getElementById("enquiryTable");
+
+      if (data.length === 0) {
+        table.innerHTML += `<tr><td colspan="5" class="empty">No enquiries yet</td></tr>`;
+      }
+
+      data.forEach(e => {
+        const row = `
+          <tr>
+            <td>${e.name}</td>
+            <td>${e.phone}</td>
+            <td>${e.email}</td>
+            <td>${e.message}</td>
+            <td>${new Date(e.createdAt).toLocaleString()}</td>
+          </tr>`;
+        table.innerHTML += row;
+      });
+    })
+    .catch(err => {
+      alert("Error loading enquiries");
+    });
+</script>
+
+</body>
+</html>
